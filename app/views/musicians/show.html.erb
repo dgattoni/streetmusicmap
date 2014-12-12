@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @musician.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @musician.longitude %>
+</p>
+
+<p>
+  <strong>Youtube video:</strong>
+  <%= @musician.youtube_video %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @musician.twitter %>
+</p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @musician.facebook %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @musician.address %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @musician.description %>
+</p>
+
+<p>
+  <strong>Musician name:</strong>
+  <%= @musician.musician_name %>
+</p>
+
+<p>
+  <strong>Instrument:</strong>
+  
+  <%= @musician.instrument.instrument_name %>
+</p>
+
+<%= link_to 'Edit', edit_musician_path(@musician) %> |
+<%= link_to 'Back', musicians_path %>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapa</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+  <!-- bootstrap -->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <!-- google maps tienes que conseguir tu prpia api key y pegarla en key=XXXXX -->
+  <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry&amp;key=XXXXX">
+  </script>
+
+  <!-- Custom styles for this template  -->
+  <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
+
+
+</head>
+<body>
+
+  <%= yield %>
+
+</body>
+</html>

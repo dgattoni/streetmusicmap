@@ -1,0 +1,56 @@
+
+<%= form_for(@musician) do |f| %>
+  <% if @musician.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@musician.errors.count, "error") %> prohibited this musician from being saved:</h2>
+
+      <ul>
+      <% @musician.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :youtube_video %><br>
+    <%= f.text_field :youtube_video %>
+  </div>
+  <div class="field">
+    <%= f.label :twitter %><br>
+    <%= f.text_field :twitter %>
+  </div>
+  <div class="field">
+    <%= f.label :facebook %><br>
+    <%= f.text_field :facebook %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :musician_name %><br>
+    <%= f.text_field :musician_name %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument_id %><br>
+ 
+    <%= collection_select(:musician, :instrument_id, @instruments, :id, :instrument_name, prompt: true) %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+  <!-- contenedor del mapa -->
+   <div class="site-wrapper">     
+    <div  id="map" class="site-wrapper-inner">
+      <div  class="cover-container">
+        
+     </div>
+   </div>
+ </div>
+ <!--//fin contenedor mapa-->
+
+
+<!-- footer -->
+ <div class="container-fluid">
+  <div class="row">
+    <div class=" col-lg-12 mastfoot">
+      <div class="inner">
+        <p>street music map <%= link_to 'New Musician', new_musician_path %> </p>        
+<%=raw @hash.to_json %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //fin footer-->
+
+<!-- inicio de mi script que dibuja el mapa-->
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+</script>
+<!-- //fin script-->
+
+ <!--  
+ PARA MAS INFO SIGUE MI TUTORIAL QUE VIENE CON EL PASO A PASO DE TODO ESTE CODIGO:
+ http://danielagattoni.quiltyweb.com/streetmusicmap-parte-2-integracion-gmaps4rails/ 
+ -->

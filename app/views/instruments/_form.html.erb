@@ -1,0 +1,21 @@
+<%= form_for(@instrument) do |f| %>
+  <% if @instrument.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@instrument.errors.count, "error") %> prohibited this instrument from being saved:</h2>
+
+      <ul>
+      <% @instrument.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :instrument_name %><br>
+    <%= f.text_field :instrument_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
